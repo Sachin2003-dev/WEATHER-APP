@@ -1,0 +1,102 @@
+:root {
+  --bg: #e8f1f5;
+  --card: #ffffff;
+  --ink: #12303d;
+  --muted: #5b7886;
+  --accent: #0f6f8f;
+  --accent-dark: #0a5670;
+  --error-bg: #fdecec;
+  --error-ink: #a12b2b;
+  --line: #d3e2e9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+}
+
+.app {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card);
+  padding: 2rem 1.75rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(18, 48, 61, 0.12);
+}
+
+h1 { margin: 0 0 0.25rem; font-size: 1.9rem; }
+.hint { margin: 0 0 1.25rem; color: var(--muted); }
+
+.search { display: flex; gap: 0.5rem; }
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  font-size: 1rem;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+}
+
+.search input:focus,
+.search button:focus-visible {
+  outline: 3px solid rgba(15, 111, 143, 0.35);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.search button {
+  padding: 0.75rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search button:hover { background: var(--accent-dark); }
+.search button:disabled { opacity: 0.6; cursor: wait; }
+
+.status { min-height: 1.4rem; margin: 1rem 0 0; color: var(--muted); }
+.status.error {
+  padding: 0.7rem 0.9rem;
+  background: var(--error-bg);
+  color: var(--error-ink);
+  border-radius: 8px;
+}
+
+.result { margin-top: 0.5rem; border-top: 1px solid var(--line); }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.row span { color: var(--muted); }
+.row strong { font-size: 1.1rem; text-align: right; }
+#temp { font-size: 1.6rem; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+@media (max-width: 420px) {
+  .search { flex-direction: column; }
+}

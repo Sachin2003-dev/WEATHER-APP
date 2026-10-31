@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Weather</h1>
+    <p class="hint">Search a city to see its current conditions.</p>
+
+    <form id="search-form" class="search">
+      <label for="city-input" class="sr-only">City name</label>
+      <input id="city-input" type="text" placeholder="e.g. Kochi, Trivandrum, Bangalore" autocomplete="off">
+      <button id="get-weather" type="submit">Get Weather</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <section id="result" class="result" hidden>
+      <p class="row"><span>City</span><strong id="city"></strong></p>
+      <p class="row"><span>Temperature</span><strong id="temp"></strong></p>
+      <p class="row"><span>Weather Condition</span><strong id="condition"></strong></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
